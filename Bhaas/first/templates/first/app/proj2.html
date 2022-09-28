@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    {% block content %}
+    <h1> This is an Details page.</h1>
+    <div >
+        <table style="width:100%"; border-spacing: 5px; solid black; padding = 10px border="20px" margin = '50px' >
+            <tr>
+                <th>Project Number</th>
+                <th >Project Name</th>
+                <th >Project Data</th>
+                <th >Project Value </th>
+                <th >Project Status</th>
+            </tr>
+            <tr>
+                <td style="text-align:center"> {{ project.id }}    </td>
+                <td style="text-align:center"> {{ project.name }}     </td>
+                <td style="text-align:center"> {{project.data }}    </td>
+                <td style="text-align:center"> {{ project.value }}    </td>
+                <td style="text-align:center"> {{project.completed }}  </td>
+            </tr>              
+            
+        </table>       
+
+    </div>
+
+    {% endblock %}
+</body>
+</html>
