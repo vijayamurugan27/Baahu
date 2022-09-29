@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+            .project-names{
+                background-color: black;         
+
+            }
+            .button {
+                        border: none;
+                        color: white;
+                        padding: 15px 32px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 16px;
+                        margin: 4px 2px;
+                        cursor: pointer;
+                        }
+
+            .button1 {background-color: #4CAF50;} /* Green */
+            .button2 {background-color: #008CBA;} /* Blue */
+    </style>
+</head>
+<body>
+   
+    {% block content %}
+    <button class="button button1">Green</button>
+    <button class="button button2">Blue</button>
+    
+    <h2>This is the home page.</h2>
+
+    <div>
+        <p>Welcome to our userpanel {{ user.get_username }}. O.K lets now discuss about the our project. </p>
+        <div class = 'button'>
+            please select any of our project.<br><br>
+                <button > project 1</button><br>
+                <button > project 2</button><br>
+                <button> project 3</button><br>
+                <button> project 4</button><br>
+                <button> project 5</button><br>
+                <button> project 6</button><br>
+                <button> project 7</button><br>
+                <button> project 8</button><br>
+                <button> project 9</button><br>
+                <button> project 10</button><br>
+        
+        </div>        
+
+    </div>
+    {% endblock %}
+
+
+
+
+
+
+
+    
+</body>
+</html>

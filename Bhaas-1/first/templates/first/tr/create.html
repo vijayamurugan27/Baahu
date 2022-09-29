@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    <h2>
+        create transformation page.
+    </h2>
+    <table style="width:100%"; border-spacing: 5px; border=1px solid black; padding = 10px>
+        <tr>
+            <th>Sequence</th>
+            <th>Step</th>
+            
+            <th>Function</th>
+            <th>Variable</th>
+            <th>Results</th>
+            <th>Parameters</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Transformation Step1</td>
+            <td><button class = "button button2">UPPERx</button></td>
+            <td>
+                <form action = 'post2' method = 'post'>
+                    {% csrf_token %}
+                    Enter STRing to convert into Upper:<input type = 'text' name='num1'><br><br>
+                    <!-- Enter the second number:<input type = 'text' name='num2'><br><br> -->
+                    <input type = 'submit' value = 'UPPERx'>       
+                </form> 
+            </td>
+            <td>{{result1|upper}}</td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>Transformation Step2</td>
+            <td><button class = "button button2">ADDx</button></td>
+            
+            <td>
+                <form action = 'post1' method = 'post'>
+                    {% csrf_token %}
+                    Enter the first number:<input type = 'text' name='num1'><br><br>
+                    Enter the second number:<input type = 'text' name='num2'><br><br>
+                    <input type = 'submit' value = 'ADDx'>       
+                </form>                
+            </td>
+            <td>{{result}}</td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td>Transformation Step3</td>
+            <td><button class = "button button2">TITLEx</button></td>
+            <td>
+                <form action = 'post3' method = 'post'>
+                    {% csrf_token %}
+                    Enter the String to convert for Title:<input type = 'text' name='num1'><br><br>
+                    <!-- Enter the second number:<input type = 'text' name='num2'><br><br> -->
+                    <input type = 'submit' value = 'TITLEx'>       
+                </form>                        
+            </td>
+            <td>{{result2|title}}</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Transformation Step4</td>
+            <td><button class = "button button2">LOWERx</button></td>
+            <td>
+                <form action = 'post4' method = 'post'>
+                    {% csrf_token %}
+                    Enter the String to convert for Title:<input type = 'text' name='num1'><br><br>
+                    <!-- Enter the second number:<input type = 'text' name='num2'><br><br> -->
+                    <input type = 'submit' value = 'LOWERx'>       
+                </form>
+
+            </td>
+            <td>{{result3|lower}}</td>
+        </tr>
+
+
+    </table>
+    {% endblock %}
+    
+</body>
+</html>
