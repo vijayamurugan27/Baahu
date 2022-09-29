@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhaas </title>
+    <link rel="stylesheet" href ="{% static 'css/base.css' %}">
+
+    <style>
+        body {
+          margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .topnav {
+          overflow: hidden;
+          background-color: #333;
+        }
+        
+        .topnav a {
+          float: left;
+          color: #f2f2f2;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+        }
+        
+        .topnav a:hover {
+          background-color: #ddd;
+          color: black;
+        }
+        
+        .topnav a.active {
+          background-color: #04AA6D;
+          color: white;
+        }
+
+        h4 {
+            color: white;
+
+        }
+        .nav-right {
+            float: right;
+            margin-right: 50px;
+        }
+
+        .button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {background-color: #4CAF50;} /* Green */
+.button2 {background-color: #008CBA;} /* Blue */
+        
+        </style>
+
+        
+
+
+</head>
+<body>
+    {% block content %}           
+        
+    <button class="button button1">Green</button>
+    <button class="button button2">Blue</button>  
+      
+    
+    <div>
+        <p>Welcome to our userpanel {{ user.get_username }}. O.K lets now discuss about the our project. </p>
+        <p>Please select any of our projects.</p>
+        {% for proj in project %}
+        project : <button class="button button1"><a href="{% url 'detail' proj.id %}">{{ proj }} </a></button><br><br>
+        data: {{ proj.data }}<br><br>
+        value: {{ proj.value }}<br><br>
+        {% endfor %}
+    </div>
+         
+    {% endblock %}
+</body>
+</html>

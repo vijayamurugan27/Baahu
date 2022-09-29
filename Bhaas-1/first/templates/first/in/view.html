@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content  %}
+    <h1>
+        This is view data page.
+        {{project}}<br><br>
+        <button class = "button button2">View  Data</button><br><br>
+        <button class = "button button2">Raw  Data</button><br><br>
+        <table style="width:100%"; border-spacing: 5px; border=1px solid black; padding = 10px>
+            <tr>
+                <th>Name</th>
+                <th>Value</th>
+                <th>File</th>
+                <th>DateTimeUploaded</th>
+            </tr>
+            <tr>
+                <td style="text-align:center">John</td>
+                <td style = "text-align: center;">1</td>
+                <td style = "text-align: center;">File001.csv</td>
+                <td style = "text-align: center;">2022-01-31T14:30</td>                
+            </tr>
+            <tr>
+                <td style="text-align:center">Mark</td>
+                <td style = "text-align: center;">2</td>
+                <td style = "text-align: center;">File001.csv</td>
+                <td style = "text-align: center;">2022-01-31T14:30</td>                
+            </tr>
+            <tr>
+                <td style="text-align:center">Jannet</td>
+                <td style = "text-align: center;">3</td>
+                <td style = "text-align: center;">File001.csv</td>
+                <td style = "text-align: center;">2022-01-31T14:30</td>                
+            </tr>
+            <tr>
+                <td style="text-align:center">Dow</td>
+                <td style = "text-align: center;">4</td>
+                <td style = "text-align: center;">File001.csv</td>
+                <td style = "text-align: center;">2022-01-31T14:30</td>                
+            </tr>
+        </table>
+
+    </h1>
+    {% endblock %}
+    
+</body>
+</html>

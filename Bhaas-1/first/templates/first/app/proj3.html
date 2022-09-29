@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    
+      
+    
+    <h1>This is for the update page.</h1>
+
+    <div>
+        <form method = 'post'>
+            {% csrf_token %}
+            
+            Forms 
+            {{ form.as_p }}
+            <input type="submit" value="Update">
+            <a href  = '/'>Cancel</a>
+        </form>
+    </div>
+<hr>
+    <div>
+        <table style="width:100%"; border-spacing: 5px;>
+            <tr>
+                <th>Project Number</th>
+                <th >Project Name</th>
+                <th >Project Data</th>
+                <th >Project Value </th>
+                <th >Project Status</th>
+            </tr>
+            <tr>
+                <td style="text-align:center"> {{ data.id }}    </td>
+                <td style="text-align:center"> {{ data.name }}     </td>
+                <td style="text-align:center"> {{data.data }}    </td>
+                <td style="text-align:center"> {{ data.value }}    </td>
+                <td style="text-align:center"> {{data.completed }}  </td>
+            </tr>              
+              
+        </table>       
+
+    </div>
+    
+
+    
+    {% block update %}
+    <h1>
+        This is using the update block.
+    </h1>
+    <div class="flex-container">
+        <div class="flex-child">
+            <div>
+                <form method = 'post'>
+                    {% csrf_token %}
+                    
+                    <strong> Forms block. </strong> 
+                    {{ form.as_p }}
+                    
+                    <input type="submit" value="Update">
+                    <a href  = '/proj1'>Cancel</a><br><br>
+                </form>
+            </div>
+        </div>
+        
+        <div class="flex-child">
+           <h1> This is the Data Block. </h1>
+            <div >
+                <table style="width:100%"; border-spacing: 5px; solid black; padding = 10px border="20px" margin = '50px' >
+                    <tr>
+                        <th>Project Number</th>
+                        <th >Project Name</th>
+                        <th >Project Data</th>
+                        <th >Project Value </th>
+                        <th >Project Status</th>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center"> {{ data.id }}    </td>
+                        <td style="text-align:center"> {{ data.name }}     </td>
+                        <td style="text-align:center"> {{data.data }}    </td>
+                        <td style="text-align:center"> {{ data.value }}    </td>
+                        <td style="text-align:center"> {{data.completed }}  </td>
+                    </tr>              
+                    
+                </table>       
+
+            </div>
+        </div>
+        
+    </div>
+      {% endblock %}
+
+</body>
+</html>

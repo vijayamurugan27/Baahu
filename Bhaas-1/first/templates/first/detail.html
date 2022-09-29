@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhaas </title>
+    <link rel="stylesheet" href ="{% static 'css/base.css' %}">
+
+
+</head>
+<body>
+    {% block content %}    
+     
+    <div>
+        <h1>
+            <p>Welcome to our userpanel <strong>{{ user.get_username }}</strong>.
+                 O.K lets now discuss about the our project. </p>
+            <p>Please select any of our projects.</p>
+        </h1>
+       
+        project : <button class="button button1"><a href="">{{ proj.name }} </a></button><br><br>
+        data: {{ proj.data }}<br><br>
+        value: {{ proj.value }}<br><br>
+       
+    </div>
+         
+    {% endblock %}
+</body>
+</html>
