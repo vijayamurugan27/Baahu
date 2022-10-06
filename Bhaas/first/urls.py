@@ -24,14 +24,31 @@ urlpatterns = [
     path('register', views.register, name = 'register'),
     path('login_reg', views.login_reg, name = 'login'),
     path('logout', views.logoutuser, name = 'logout'),
-    path('list', views.list, name = 'list'),
-    path('detail/<int:id>', views.detail, name = 'detail'),
-    
-    # path('detail/<int:id>', views.detail, name = 'detail'),
     
     path('proj1', views1.proj1, name = 'proj1'),
-    path('detail_product/<int:id>', views1.detail_product, name = 'detail_product'),
-    path('update/<int:id>', views1.update, name = 'update'),
-    path('delete/<int:id>', views1.delete, name = 'delete'),
+    path('det/<int:id>', views1.det, name = 'det'),
+    path('det/det1/<int:id>', views1.det1, name = 'det/det1'),
+    path('det/det2/<int:id>', views1.det2, name = 'det/det2'),
+    path('det/det3/<int:id>', views1.det3, name = 'det/det3'),
+    path('det/det4/<int:id>', views1.det4, name = 'det/det4'),
+    path('det/det5/<int:id>', views1.det5, name = 'det/det5'),
     
+    #import_data, View_data, Transform_data  
+    path('import_data/<int:id>', views1.import_data, name = 'import_data'),    
+    path('view_data/<int:id>', views1.view_data, name = 'view_data'),
+    path('transform_data/<int:id>', views1.transform_data, name = 'transform_data'),
+
+path('view_data/import_data/<int:id>', views1.import_data, name = 'import_data'),    
+    path('view_data/view_data/<int:id>', views1.view_data, name = 'view_data'),
+    path('view_data/transform_data/<int:id>', views1.transform_data, name = 'transform_data'),
+
+    path('createtransformation', views1.createtransformation, name = 'createtransformation'),
+    path('executetransformation', views1.executetransformation, name = 'executetransformation'),
+    path('post1', views1.post1, name = 'post1'),    
+    path('post2', views1.post2, name = 'post2'),
+    path('post3', views1.post3, name = 'post3'),
+    path('post4', views1.post4, name = 'post4'),
+
+path('csvfile', views1.csvfile, name='csvfile'),
+
 ]

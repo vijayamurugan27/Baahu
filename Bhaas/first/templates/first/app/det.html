@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    {% block content %}
+    <div>
+        function : det<br>
+        html : app/det<br>
+        <p> 
+        Logged in as : <strong>{{   user.get_username | title     }}</strong> <br><br>
+        Welcome to : <strong>{{ project }} </strong>
+        </p>
+        <div>
+            What do you want to do? Please select an option.<br>
+            <button class = "button button2"><a href = "det1/{{project.id}}">View RAW data </a></button><br>
+            <button class = "button button2"><a href = "det2/{{project.id}}">View Trsnsformation Steps</a></button><br>
+            <button class = "button button2"><a href = "det3/{{project.id}}">View TRANSFORMED Data</a></button><br>
+            <button class = "button button2"><a href = "det4/{{project.id}}">Import RAW Data </a></button><br>
+            <button class = "button button2"><a href = "det5/{{project.id}}">TRANSFORM Data </a></button><br>
+
+        </div>
+    </div>
+    {% endblock %}
+    
+</body>
+</html>

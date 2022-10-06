@@ -14,6 +14,7 @@ class CreateUserForm(UserCreationForm):
 class ProjectsForm(forms.ModelForm):
 	class Meta:
 		model = Projects
-		fields = ['name', 'data', 'value', 'completed']
-
+		# fields = ['name', 'data', 'value', 'completed']
+		
+		fields = ['name', 'completed']
 		    

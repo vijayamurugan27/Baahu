@@ -16,7 +16,7 @@ from django.contrib.auth.decorators import login_required
 
 @login_required(login_url = 'login')
 def home(request):
-    return render(request, 'first/home3.html')
+    return render(request, 'first/home.html')
 
 
 def register(request):
@@ -57,13 +57,3 @@ def logoutuser(request):
 	logout(request)
 	return redirect('login')
 
-from .models import Projects
-def list(request):
-    project = Projects.objects.all()
-    context = {  'project' : project }
-    return render (request, 'first/list.html', context)
-
-def detail(request, id):
-	project = Projects.objects.get(id = id)	
-	context = {'proj':project }
-	return render(request,'first/detail.html', context)

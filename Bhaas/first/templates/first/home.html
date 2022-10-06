@@ -1,5 +1,38 @@
-<h1>Home Page</h1>
+{% extends 'base.html' %}
+{% load static %}
 
-Hello {{ user }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhaas </title>
 
-<a href="{% url 'logout' %}">Logout </a>
+
+</head>
+<body>
+    {% block content %}
+    
+            
+        
+    <!-- <button class="button button1">Green</button>
+    <button class="button button2">Blue</button>
+    <button class = 'button button3'>Pink</button>  
+       -->
+    <div>
+      <h1> Hai
+        <p>Welcome to our userpanel <strong>{{ user.get_username }} </strong>.
+           O.K lets now discuss about the our project. </p>
+        
+           <br>
+            Click the Project button to proceed Further.
+                
+        
+        </div>        
+      </h1>  
+    </div>
+         
+    {% endblock %}
+</body>
+</html>

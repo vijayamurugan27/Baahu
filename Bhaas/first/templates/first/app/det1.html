@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    {% block content %}
+    <div>
+        func: det1<br>
+        html: app/det1<br> 
+        <p> 
+        Logged in as : <strong>{{   user.get_username | title     }}</strong> <br><br>
+        Welcome to : <strong>{{ project }} </strong>
+        </p>
+        <div class="center">
+           <button class="button button1">VIEW RAW</button><br>
+           <table>
+                <tr>
+                    <th>PROJECT</th>
+                     <th>NAME</th>
+                     <th>VALUE</th>
+                     <th>SOURCE FILE</th>
+                     <th>UPLOADED BY</th>
+                     <th>UPLOADED ON </th>   
+                </tr>
+                <tr>
+                    <td>proj</td>
+                    <td>proj name</td>
+                    <td>proj value</td>
+                    <td>source file name</td>
+                    <td>uploaded name</td>
+                    <td>Uploaded time</td>
+
+                </tr>
+           </table>
+           
+        </div>
+    </div>
+    {% endblock %}
+    
+</body>
+</html>

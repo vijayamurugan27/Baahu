@@ -1,0 +1,11 @@
+username: admin 
+password:1234
+staff_status:yes
+
+username: user1
+password: user123456
+staff_status: no
+
+username: user2
+password:user123456
+staff_status: yes
