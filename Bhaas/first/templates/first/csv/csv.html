@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    This page is for processing CSV files.
+    {{ user.is_superuser }}
+    <div>
+        <h2>Import Data</h2>
+        <strong>Choose CSV File</strong>
+        <button class="button button2">Import</button>
+        <div>
+            <form action="{% url "csvfile" %}" method="POST" enctype="multipart/form-data" class="form-horizontal"> 
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="name" class="col-md-3 col-sm-3 col-xs-12 control-label">File: </label>
+                    <div class="col-md-8">
+                        <input type="file" name="csv_file" id="csv_file" required="True" class="form-control">
+                    </div>                    
+                </div>
+                <br>
+                <div class="form-group">                    
+                    <div class="col-md-3 col-sm-3 col-xs-12 col-md-offset-3" style="margin-bottom:10px;">
+                         <button class="btn btn-primary"> <span class="glyphicon glyphicon-upload" style="margin-right:5px;"></span>Upload </button>
+                    </div> 
+                </div>
+                </form>
+        </div>
+    </div>
+    {% endblock%}
+    
+</body>
+</html>

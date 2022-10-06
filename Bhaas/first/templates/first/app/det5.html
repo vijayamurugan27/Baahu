@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    
+    {% block content %}
+    <div>
+        func det5 <br>
+        html app/det5<br>
+        <p> 
+        Logged in as : <strong>{{   user.get_username | title     }}</strong> <br><br>
+        Welcome to : <strong>{{ project }} </strong>
+        </p>
+        <div class="center">
+           <button class="button button1">EXECUTE</button><br>
+           <table>
+            <tr>
+                
+                 <th>STEP</th>
+                 <th>VARIABLE</th>
+                 <th>FUNCTION</th>
+                 <th>PARAMETERS</th>
+                   
+            </tr>
+            <tr>
+                <td> UPPERX or LOWERx </td>
+                <td> nuerical value </td>
+                <td> function name </td>
+                <td> parameter name </td>
+                
+            </tr>
+       </table>
+      
+           
+        </div>
+    </div>
+    {% endblock %}
+    
+</body>
+</html>

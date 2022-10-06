@@ -29,52 +29,53 @@
         {% endif %}
     </div>
     <div >
-        <table style="width:100%"; border-spacing: 5px; border=1px solid black; padding = 10px>
+        <table style="width:100%"; border-spacing: 5px; border=1px solid black; padding = 10px; class="table1">
             <tr>
-                <th>Project Number</th>
+                <!-- <th>Project Number</th> -->
                 <th >Project Name</th>
-                <th >Project Data</th>
-                <th >Project Value </th>
-                <th >Project Status</th>
-                <th> Project Details page</th>
-                <th> Update </th>
-                <th> Delete </th>
+                <!-- <th >Project Data</th>
+                <th >Project Value </th> -->
+                <!-- <th >Project Status</th>
+                <th> Import Data</th>
+                <th> View Data </th>
+                <th> Transform Data </th> -->
             </tr>
             {% for project in proj %}
             <tr>
                 
-                    <td style="text-align:center"> {{ project.id }}    </td>
-                    <td style="text-align:center"> {{ project.name }}     </td>
-                    <td style="text-align:center"> {{project.data }}    </td>
-                    <td style="text-align:center"> {{ project.value }}    </td>
-                    <td style="text-align:center"> {{project.completed }}  </td>
+                    <!-- <td style="text-align:center"> {{ project.id }}    </td> -->
+                    <td style="text-align:center"><button class="button button1">
+                        <a href = "det/{{project.id}}"> {{ project.name }} </a> </button>     </td>
+
+
+                    <!-- <td style="text-align:center"> {{project.data }}    </td>
+                    <td style="text-align:center"> {{ project.value }}    </td> -->
+                    <!-- <td style="text-align:center"> {{project.completed }}  </td> -->
                     
                     {% if project.completed %}
 
-                    {{project.id| add:"1"}}
                     
-                        <td style="text-align: center;" >
-                            <a href = "detail_product/{{project.id}}"> <button class = "button button1">Detail</button></a>
+                        <!-- <td style="text-align: center;" >
+                            <a href = "import_data/{{project.id}}"> <button class = "button button1">Import Data</button></a>
                         </td>
                         <td style = "text-align: center;">
-                            <a href="update/{{project.id}}"><button class = "button button2">Update</button></a>
+                            <a href="view_data/{{project.id}}"><button class = "button button2">View Data</button></a>
                         </td>
                         <td style="text-align: center;">
-                            <a href = "delete/{{project.id}}"><button class = "button button3">Delete</button></a>
+                            <a href = "transform_data/{{project.id}}"><button class = "button button3">Transform Data</button></a>
                         </td>
-
-                        
+                         -->
 
                     {% else %}
-                        <td style="text-align: center;" >
-                            <button class = "button button1" onclick="myFunction()">Detail</button>
+                        <!-- <td style="text-align: center;" >
+                            <button class = "button button1" onclick="myFunction()">Import Data</button>
                         </td>
                         <td style = "text-align: center;">
-                            <button class = "button button2"onclick="myFunction()">Update</button>
+                            <button class = "button button2"onclick="myFunction()">View Data</button>
                         </td>
                         <td style="text-align: center;">
-                            <button class = "button button3" onclick="myFunction()">Delete</button>
-                        </td>
+                            <button class = "button button3" onclick="myFunction()">Transform Data</button>
+                        </td> -->
                     {% endif %}
 
             </tr>   
@@ -110,17 +111,50 @@
             {% for proj in proj %}
                 {% if proj.completed is False %}
                 {{proj.name}},
+                {{forloop.counter}}
                 
                 {% endif %}
             {% endfor %}
         </h5>
     </div>
     <hr>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Submit">
-    </form>
+    {% endblock %}
+    {% block update %}
+    <div class="flex-container">
+        <div class="flex-child">
+            <div>
+                <p>Please Enter the new project details.</p>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" value="Submit">
+                    
+                </form>
+            </div>
+        </div>
+        <div class="flex-child">
+            <p> This is the Data Block. </p>
+            Enter here for the next project.
+            <td style="text-align: center;" >
+                <a href = "detail_product/{{project1.id}}"> <button class = "button button1">Next project.</button></a>
+            
+            </td>
+          
+            <div >
+            </div>
+        </div>
+    </div>
+
     {% endblock %}
 </body>
 </html>
+
+            <form method = 'post'>
+                {% csrf_token %}
+                
+                <strong> Forms block. </strong> 
+                {{ form.as_p }}
+                
+                <input type="submit" value="Update">
+                <a href  = '/proj1'>Cancel</a><br><br>
+            </form>

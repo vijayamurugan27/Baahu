@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    {% block content %}
+    <div>
+        func: det2<br>
+        html: app/det2.html<br> 
+        <p> 
+        Logged in as : <strong>{{   user.get_username | title     }}</strong> <br><br>
+        Welcome to : <strong>{{ project }} </strong>
+        </p>
+        <div class="center">
+           <button class="button button1">VIEW TRANSFORMATION STEPS</button><br>
+           <table>
+                <tr>
+                    <th>STEP</th>
+                     <th>VARIABLE</th>
+                     <th>FUNCTION</th>
+                     <th>PARAMETERS</th>
+                     <th>CREATED BY</th>
+                     <th>CREATED ON </th>   
+                </tr>
+                <tr>
+                    <td>steps</td>
+                    <td>variable name</td>
+                    <td>function</td>
+                    <td>parameters</td>
+                    <td>created person name</td>
+                    <td>created time</td>
+
+                </tr>
+           </table>
+           
+        </div>
+    </div>
+    {% endblock %}
+    
+</body>
+</html>
